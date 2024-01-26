@@ -244,12 +244,12 @@ bob@dylan:~$
 
 
    
-3. Deletion-resilient hypermedia pagination
-mandatory
+# 3. Deletion-resilient hypermedia pagination
 The goal here is that if between two queries, certain rows are removed from the dataset, the user does not miss items from dataset when changing page.
 
-Start 3-hypermedia_del_pagination.py with this code:
+Start `3-hypermedia_del_pagination.py` with this code:
 
+```
 #!/usr/bin/env python3
 """
 Deletion-resilient hypermedia pagination
@@ -293,6 +293,8 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
             pass
+```
+
 Implement a get_hyper_index method with two integer arguments: index with a None default value and page_size with default value of 10.
 
 The method should return a dictionary with the following key-value pairs:
@@ -305,6 +307,8 @@ Requirements/Behavior:
 Use assert to verify that index is in a valid range.
 If the user queries index 0, page_size 10, they will get rows indexed 0 to 9 included.
 If they request the next index (10) with page_size 10, but rows 3, 6 and 7 were deleted, the user should still receive rows indexed 10 to 19 included.
+
+```
 bob@dylan:~$ cat 3-main.py
 #!/usr/bin/env python3
 """
@@ -355,8 +359,12 @@ Nb items: 19417
 {'index': 3, 'data': [['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Emily', '99', '4'], ['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Mia', '79', '5']], 'page_size': 2, 'next_index': 6}
 {'index': 5, 'data': [['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Mia', '79', '5'], ['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Charlotte', '59', '6']], 'page_size': 2, 'next_index': 7}
 bob@dylan:~$ 
-Repo:
+```
+<hr>
 
-GitHub repository: alx-backend
-Directory: 0x00-pagination
-File: 3-hypermedia_del_pagination.py
+**Repo:**
+- GitHub repository: `alx-backend`
+- Directory: `0x00-pagination`
+- File: `3-hypermedia_del_pagination.py`
+<hr>
+<br>
