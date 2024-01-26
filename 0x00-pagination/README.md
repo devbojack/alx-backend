@@ -83,8 +83,9 @@ bob@dylan:~$
 
 
 ## 1. Simple pagination
-Copy index_range from the previous task and the following class into your code
+Copy `index_range` from the previous task and the following class into your code
 
+```
 import csv
 import math
 from typing import List
@@ -111,12 +112,16 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
             pass
-Implement a method named get_page that takes two integer arguments page with default value 1 and page_size with default value 10.
+```
 
-You have to use this CSV file (same as the one presented at the top of the project)
-Use assert to verify that both arguments are integers greater than 0.
-Use index_range to find the correct indexes to paginate the dataset correctly and return the appropriate page of the dataset (i.e. the correct list of rows).
-If the input arguments are out of range for the dataset, an empty list should be returned.
+Implement a method named `get_page` that takes two integer arguments `page` with default value 1 and `page_size` with default value 10.
+
+- You have to use this [CSV file](https://intranet.alxswe.com/rltoken/NBLY6mdKDBR9zWvNADwjjg) (same as the one presented at the top of the project)
+- Use `assert` to verify that both arguments are integers greater than 0.
+- Use `index_range` to find the correct indexes to paginate the dataset correctly and return the appropriate page of the dataset (i.e. the correct list of rows).
+- If the input arguments are out of range for the dataset, an empty list should be returned.
+
+```
 bob@dylan:~$  wc -l Popular_Baby_Names.csv 
 19419 Popular_Baby_Names.csv
 bob@dylan:~$  
@@ -171,28 +176,34 @@ AssertionError raised when page and/or page_size are not ints
 [['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Emily', '99', '4'], ['2016', 'FEMALE', 'ASIAN AND PACIFIC ISLANDER', 'Mia', '79', '5']]
 []
 bob@dylan:~$ 
-Repo:
+```
+<hr>
 
-GitHub repository: alx-backend
-Directory: 0x00-pagination
-File: 1-simple_pagination.py
+**Repo:**
+- GitHub repository: `alx-backend`
+- Directory: `0x00-pagination`
+- File: `1-simple_pagination.py`
+<hr>
+<br>
+
    
-2. Hypermedia pagination
-mandatory
+## 2. Hypermedia pagination
 Replicate code from the previous task.
 
-Implement a get_hyper method that takes the same arguments (and defaults) as get_page and returns a dictionary containing the following key-value pairs:
+Implement a `get_hyper` method that takes the same arguments (and defaults) as `get_page` and returns a dictionary containing the following key-value pairs:
 
-page_size: the length of the returned dataset page
-page: the current page number
-data: the dataset page (equivalent to return from previous task)
-next_page: number of the next page, None if no next page
-prev_page: number of the previous page, None if no previous page
-total_pages: the total number of pages in the dataset as an integer
-Make sure to reuse get_page in your implementation.
+- `page_size`: the length of the returned dataset page
+- `page`: the current page number
+- `data`: the dataset page (equivalent to return from previous task)
+- `next_page`: number of the next page, `None` if no next page
+- `prev_page`: number of the previous page, `None` if no previous page
+- `total_pages`: the total number of pages in the dataset as an integer
 
-You can use the math module if necessary.
+Make sure to reuse `get_page` in your implementation.
 
+You can use the `math` module if necessary.
+
+```
 bob@dylan:~$ cat 2-main.py
 #!/usr/bin/env python3
 """
@@ -221,11 +232,17 @@ bob@dylan:~$ ./2-main.py
 ---
 {'page_size': 0, 'page': 3000, 'data': [], 'next_page': None, 'prev_page': 2999, 'total_pages': 195}
 bob@dylan:~$ 
-Repo:
+```
+<hr>
 
-GitHub repository: alx-backend
-Directory: 0x00-pagination
-File: 2-hypermedia_pagination.py
+**Repo:**
+- GitHub repository: `alx-backend`
+- Directory: `0x00-pagination`
+- File: `2-hypermedia_pagination.py`
+<hr>
+<br>
+
+
    
 3. Deletion-resilient hypermedia pagination
 mandatory
