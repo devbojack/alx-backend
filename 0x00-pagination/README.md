@@ -4,9 +4,11 @@
 | Back-end |
 | |
 
-![Justus Lolwerikoi](https://github.com/devbojack)
+By [Justus Lolwerikoi](https://github.com/devbojack)
 
-![](/images/0x00.png)
+![](/images/0x00.png)<br>
+![](/images/0x00_1.png)<br>
+![](/images/0x00_2.png)
 
 ## Resources
 **Read or watch:**
@@ -38,12 +40,13 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 # Tasks
 
 ## 0. Simple helper function
-Write a function named index_range that takes two integer arguments page and page_size.
+Write a function named `index_range` that takes two integer arguments `page` and `page_size`.
 
 The function should return a tuple of size two containing a start index and an end index corresponding to the range of indexes to return in a list for those particular pagination parameters.
 
 Page numbers are 1-indexed, i.e. the first page is page 1.
 
+```
 bob@dylan:~$ cat 0-main.py
 #!/usr/bin/env python3
 """
@@ -66,14 +69,20 @@ bob@dylan:~$ ./0-main.py
 <class 'tuple'>
 (30, 45)
 bob@dylan:~$
-Repo:
+```
+<hr>
 
-GitHub repository: alx-backend
-Directory: 0x00-pagination
-File: 0-simple_helper_function.py
-   
-1. Simple pagination
-mandatory
+**Repo:**
+- GitHub repository: `alx-backend`
+- Directory: `0x00-pagination`
+- File: `0-simple_helper_function.py`
+<hr>
+<br>
+
+
+
+
+## 1. Simple pagination
 Copy index_range from the previous task and the following class into your code
 
 import csv
