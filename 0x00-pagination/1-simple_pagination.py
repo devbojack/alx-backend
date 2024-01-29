@@ -2,7 +2,7 @@
 """Simple Pagination"""
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 
 class Server:
@@ -24,18 +24,24 @@ class Server:
 
         return self.__dataset
 
+    def index_range(self, page, page_size) -> Tuple[int, int]:
+        """
+        Takes two integer arguments page and page_size
+        Returns a tuple
+        """
+        start_index = (page - 1) * page_size
+        end_index = start_index + page_size
+        return start_index, end_index
+
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
-
-
-def index_range(page, page_size):
-    """
-    Takes two integer arguments page and page_size
-    Returns a tuple
-    """
-    return 0
-
-
-def get_page(page=1, page_size=10):
-    """Get Page"""
-    return 0
+        """Get Page"""
+        assert isinstance(page, int)
+        assert isinstance(page_size, int)
+        assert page > 0
+        assert page_size > 0
+        csv_size = len(self.dataset())
+        start, end = self.index_range(page, page_size)
+        end = min(end, csv_size)
+        if start >= csv_size:
+            return []
+        return self.dataset()[start:end]
