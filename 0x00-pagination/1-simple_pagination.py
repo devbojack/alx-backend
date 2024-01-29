@@ -28,6 +28,14 @@ class Server:
             pass
 
 
+def index_range(page, page_size):
+    """
+    Takes two integer arguments page and page_size
+    Returns a tuple
+    """
+    return 0
+
+
 def get_page(page=1, page_size=10):
-    """"""
+    """Get Page"""
     return 0
