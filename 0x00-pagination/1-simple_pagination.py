@@ -28,6 +28,6 @@ class Server:
             pass
 
 
-def get_page(page, page_size = 1):
+def get_page(page=1, page_size=10):
     """"""
     return 0
