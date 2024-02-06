@@ -31,8 +31,12 @@
 - A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 - All your functions and coroutines must be type-annotated.
 
+<br>
 
 # Tasks
+
+<details>
+<summary>Mandatory</summary>
 
 ## 0. Basic Flask app
 First you will setup a basic Flask app in `0-app.py.` Create a single / route and an `index.html` template that simply outputs “Welcome to Holberton” as page title (`<title>`) and “Hello world” as header (`<h1>`).
@@ -178,11 +182,11 @@ In your HTML template, if a user is logged in, in a paragraph tag, display a wel
 
 **Visiting `http://127.0.0.1:5000/` in your browser should display this:**
 
-|[](/0x02-i18n/assets/5_1.png)
+![](/0x02-i18n/assets/5_1.png)
 
 **Visiting `http://127.0.0.1:5000/?login_as=2` in your browser should display this:** 
 
-|[](/0x02-i18n/assets/5_2.png)
+![](/0x02-i18n/assets/5_2.png)
 
 <hr>
 
@@ -205,7 +209,7 @@ The order of priority should be
 
 Test by logging in as different users
 
-|[](/0x02-i18n/assets/6.png)
+![](/0x02-i18n/assets/6.png)
 <hr>
 
 **Repo:**
@@ -235,6 +239,13 @@ Before returning a URL-provided or user time zone, you must validate that it is 
 <hr>
 <br>
 
+</details>
+
+<br>
+
+
+<details>
+<summary>Advanced</summary>
 
 ## 8. Display the current time
 Based on the inferred time zone, display the current time on the home page in the default format. For example:
@@ -250,11 +261,11 @@ Use the following translations
 
 **Displaying the time in French looks like this:**
 
-|[](/0x02-i18n/assets/8_1.png)
+![](/0x02-i18n/assets/8_1.png)
 
 **Displaying the time in English looks like this:**
 
-|[](/0x02-i18n/assets/8_2.png)
+![](/0x02-i18n/assets/8_2.png)
 
 <hr>
 
@@ -264,4 +275,5 @@ Use the following translations
 - File: `app.py, templates/index.html, translations/en/LC_MESSAGES/messages.po, translations/fr/LC_MESSAGES/messages.po`
 <hr>
 <br>
-  
+
+</details>
