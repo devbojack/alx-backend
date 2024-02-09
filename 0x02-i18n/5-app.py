@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-"""Mock logging in"""
+"""
+Mock Logging
+"""
 
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
@@ -11,7 +13,8 @@ babel = Babel(app)
 
 class Config:
     """
-    Config class"""
+    Config class
+    """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -28,7 +31,9 @@ users = {
 
 
 def get_user(login_as):
-    """get_user"""
+    """
+    get_user
+    """
     try:
         return users.get(int(login_as))
     except Exception:
@@ -37,13 +42,17 @@ def get_user(login_as):
 
 @app.before_request
 def before_request():
-    """before_request"""
+    """
+    before_request
+    """
     g.user = get_user(request.args.get("login_as"))
 
 
 @babel.localeselector
 def get_locale():
-    """get_locale"""
+    """
+    get_locale
+    """
     locale = request.args.get("locale")
     if locale:
         return locale
